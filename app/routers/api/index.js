@@ -1,5 +1,5 @@
 const express = require('express');
-// const exempleRouter = require('./exemple');
+const skillRouter = require('./skill');
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.all('/', (req, res) => {
 
 // On préfixe les routers de l'API
 
-// router.use('/users', exempleRouter);
+router.use('/skills', skillRouter);
 
 router.use(() => {
   throw new Error('API Route not found', { statusCode: 404 });
